@@ -75,6 +75,7 @@
     <mat-error class="server-error"> {{ errorMessage }}</mat-error>
 
     <button
+    *ngIf="!isPasswordReset"
       mat-raised-button
       color="accent"
       type="submit"
@@ -82,6 +83,17 @@
       (click)="onSubmit()"
     >
       Submit
+    </button>
+
+    <button
+    *ngIf="isPasswordReset"
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="isLoading"
+      (click)="onSubmit()"
+    >
+      Send Reset Email
     </button>
 
     <a *ngIf="!isPasswordReset && isLogin" (click)="changeType('reset')">
