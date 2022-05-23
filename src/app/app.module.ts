@@ -9,19 +9,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule} from '@angular/fire/compat/firestore'
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
-// import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-// import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
-// import { provideAuth,getAuth } from '@angular/fire/auth';
-// import { provideDatabase,getDatabase } from '@angular/fire/database';
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomepageComponent
-  ],
+  declarations: [AppComponent, HomepageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,14 +22,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAnalytics(() => getAnalytics()),
-    // provideAuth(() => getAuth()),
-    // provideDatabase(() => getDatabase())
   ],
-  providers: [
-    // ScreenTrackingService,UserTrackingService
-  ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

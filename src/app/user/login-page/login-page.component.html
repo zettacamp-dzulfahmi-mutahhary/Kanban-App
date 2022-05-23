@@ -1,0 +1,23 @@
+<main>
+  <div class="login" *ngIf="!(afAuth.authState | async)">
+    <button appGoogleSignin mat-raised-button>
+      <img class="logo" src="../../../assets/images/google-logo.png" alt="logo-google">
+      Login With Google
+    </button>
+  </div>
+
+  <h4 *ngIf="!(afAuth.authState | async)"><b>Or</b></h4>
+
+  <app-email-login></app-email-login>
+
+  <div
+    *ngIf="afAuth.authState | async as user"
+    class="logout"
+  > 
+
+    <p>Welcome, <b>{{ user.displayName ?? user.email }}</b></p>
+    <img class="profile-pic" [src]=" user.photoURL ?? defaultImg" alt="Profile Picture" />
+
+    <button mat-stroked-button (click)="afAuth.signOut()">Logout</button>
+  </div>
+</main>

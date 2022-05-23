@@ -1,0 +1,24 @@
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.logout, .login{
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-pic{
+    border-radius: 50%;
+}
+
+.logo{
+    height: 20px;
+    margin-right: 5px;
+}
